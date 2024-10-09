@@ -1,0 +1,100 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+    background: url('img/bernabeu.jpg') no-repeat center center fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor de la imagen del estadio */
+.stadium-img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.stadium-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 82, 159, 0.8); /* Azul del Real Madrid */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 10px;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.overlay-text {
+    padding: 20px;
+    text-align: center;
+}
+
+h1.team-title {
+    font-size: 2.5rem;
+    color: #00529F; /* Azul Real Madrid */
+}
+
+/* Info Card */
+.info-card {
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+ul.activities-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.activities-list li {
+    background-color: #e9ecef;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+ul.activities-list li:hover {
+    background-color: #d1d1d1;
+}
+
+/* Mensaje de actividad */
+.activity-message {
+    display: none; /* Oculto por defecto */
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -30px; /* Para que aparezca justo debajo de la lista */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #00529F;
+    color: white;
+    padding: 10px;
+    margin-top: 50px;
+}

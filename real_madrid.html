@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Support Real Madrid!</title>
+    <link rel="stylesheet" href="styles_real_madrid.css">
+    <!-- Bootstrap and GSAP added -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="team-title">You Support Real Madrid!</h1>
+        <div class="info-card card shadow-lg p-4 mt-4">
+            <p><strong>Time:</strong> 13:00 - <strong>Location:</strong> Calle Gran Vía 123</p>
+            <p><strong>Food:</strong> Paella, tapas, beer, and churros.</p>
+            <ul class="list-group activities-list">
+                <li class="list-group-item" data-message="You've arrived at the big football party! Enjoy the welcome with your friends.">13:00 - Arrival and welcome</li>
+                <li class="list-group-item" data-message="A delicious lunch to energize you before the match.">14:00 - Real Madrid's special lunch</li>
+                <li class="list-group-item" data-message="It's game time! Support your team from the start.">16:00 - Match begins</li>
+                <li class="list-group-item" data-message="Celebrate with us and share your best moments!">18:00 - Post-match celebration</li>
+            </ul>
+            <div class="activity-message mt-3"></div>
+        </div>
+    </div>
+
+
+    <!-- JS para las animaciones y el overlay -->
+    <script>
+        // Animaciones de entrada con GSAP
+        gsap.from('.info-card', {duration: 1.5, opacity: 0, y: -50, ease: 'bounce'});
+
+        // Mostrar mensaje al pasar el ratón por encima de las actividades
+        const activities = document.querySelectorAll('.activities-list .list-group-item');
+        const activityMessage = document.querySelector('.activity-message');
+
+        activities.forEach(activity => {
+            activity.addEventListener('mouseenter', () => {
+                const message = activity.getAttribute('data-message');
+                activityMessage.textContent = message;
+                activityMessage.style.display = 'block';
+                gsap.fromTo(activityMessage, {opacity: 0, y: -10}, {duration: 0.5, opacity: 1, y: 0});
+            });
+
+            activity.addEventListener('mouseleave', () => {
+                activityMessage.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
